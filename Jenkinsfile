@@ -7,10 +7,9 @@ pipeline {
 
   environment {
         DISABLE_AUTH = 'true'
-    }
+  }
 
   stages {
-
     stage('Build') {
       agent {
         label 'java'
