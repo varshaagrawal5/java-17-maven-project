@@ -1,13 +1,11 @@
 pipeline {
   agent any 
 
-  stages {
+  tools {
+    maven 'mvn'
+  }
 
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
+  stages {
 
     stage('Build') {
       steps {
