@@ -23,7 +23,7 @@ pipeline {
 
     stage('Scanning') {
       steps {
-        echo ${DISABLE_AUTH}
+        echo "${DISABLE_AUTH}"
         echo 'Scanning'
       }
     }
