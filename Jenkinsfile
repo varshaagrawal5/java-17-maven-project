@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        echo 'Build'
+        echo 'Build ' + env.BRANCH_NAME
         sh 'mvn clean install'
       }
     }
