@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'Maven'
-            }
+        }
 
     stages {
         stage('Build') {
@@ -55,9 +55,9 @@ pipeline {
             steps {
                 script {
                     if (env.BRANCH_NAME == "master") {
-                echo 'Prod'
+                    echo 'Prod'
                     }
+                }
             }
         }
-    }
 }
