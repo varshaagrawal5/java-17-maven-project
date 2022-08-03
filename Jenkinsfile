@@ -20,9 +20,7 @@ pipeline {
         stage('Code Quality') {
             steps {
                 echo 'Quality....'
-
-                ## integrate with snarquve
-            }
+                   }
         }
         stage('Deploy to Dev') {
             steps {
