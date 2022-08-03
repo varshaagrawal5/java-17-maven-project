@@ -29,10 +29,9 @@ pipeline {
         }
         stage('Deploy to Test') {
             steps {
-               
-                        echo 'Test'
-                    }
-            }
+                echo 'Test'
+             }
+        }
         stage('Deploy to UAT') {
             steps {
                 echo 'UAT'
