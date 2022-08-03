@@ -29,13 +29,10 @@ pipeline {
         }
         stage('Deploy to Test') {
             steps {
-                script {
-                    if (env.BRANCH_NAME == "master") || (env.BRANCH_NAME == "develop") {
+               
                         echo 'Test'
                     }
-                }
             }
-        }
         stage('Deploy to UAT') {
             steps {
                 echo 'UAT'
