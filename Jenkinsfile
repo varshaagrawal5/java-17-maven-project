@@ -13,11 +13,15 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                echo "${env.BUILD_NUMBER}"
+                echo "${env.BUILD_URL}"
             }
         }
         stage('Code Quality') {
             steps {
                 echo 'Quality....'
+
+                ## integrate with snarquve
             }
         }
         stage('Deploy to Dev') {
@@ -38,6 +42,15 @@ pipeline {
         stage('Deploy to Pre_prod') {
             steps {
                 echo 'Stagging'
+            }
+        }
+        stage('Prod Approval') {
+            steps {
+                script {
+                    if (env.BRANCH_NAME == "master") {
+                    input('Proceed for Prod Deployment?')
+                    }
+                }
             }
         }
         stage('Deploy to Prod') {
