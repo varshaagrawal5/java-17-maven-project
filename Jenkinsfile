@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'Maven'
-        }
+            }
 
     stages {
         stage('Build') {
@@ -20,7 +20,7 @@ pipeline {
         stage('Code Quality') {
             steps {
                 echo 'Quality....'
-                   }
+            }
         }
         stage('Deploy to Dev') {
             steps {
@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy to Test') {
             steps {
                 echo 'Test'
-             }
+            }
         }
         stage('Deploy to UAT') {
             steps {
@@ -53,11 +53,7 @@ pipeline {
         }
         stage('Deploy to Prod') {
             steps {
-                script {
-                    if (env.BRANCH_NAME == "master") {
-                    echo 'Prod'
-                    }
-                }
+                echo 'Prod'
             }
         }
     }
